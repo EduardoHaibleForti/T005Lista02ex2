@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int nivel_combustivel;
+
+    printf("Sistema de Monitoramento de Combustível\n");
+    printf("Informe o nível de combustível (digite 100 para finalizar):\n");
+
+    do {
+        printf("\nDigite o nível de combustível (em %%): ");
+        scanf("%d", &nivel_combustivel);
+
+        if (nivel_combustivel == 100) {
+            printf("Combustível cheio! Sistema finalizado.\n");
+            break;
+        }
+
+        if (nivel_combustivel < 15) {
+            printf("ALERTA: Nível de combustível baixo (%d%%). Por favor, recarregue o veículo!\n", nivel_combustivel);
+        } else {
+            printf("Nível de combustível adequado (%d%%).\n", nivel_combustivel);
+        }
+    } while (1);
+
+    return 0;
+}
